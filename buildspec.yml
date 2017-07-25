@@ -1,10 +1,6 @@
 version: 0.2
 
 phases:
-  install:
-    commands:
-      - echo Install Hugo
-      - pip install hugo
   build:
     commands:
       - echo Build started on `date`
