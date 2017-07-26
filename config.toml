@@ -1,50 +1,62 @@
-baseURL = "http://emilyburch.com/"
-languageCode = "en-us"
+baseurl = "/"
+DefaultContentLanguage = "en"
+#DefaultContentLanguage = "ja"
 title = "Emily Burch"
-theme = "minimal"
+theme = "beautifulhugo"
+metaDataFormat = "yaml"
+pygmentsUseClasses = true
+pygmentCodeFences = true
+#disqusShortname = "XXX"
+#googleAnalytics = "XXX"
 
-[params]
-    author = "Emily Burch"
-    description = "Personal site powered by Hugo"
-    githubUsername = "esburch"
-    accent = "purple"
-    showBorder = true
-    backgroundColor = "white"
-    font = "Quicksand" # should match the name on Google Fonts!
-    highlight = true
-    highlightStyle = "solarized-dark"
-    highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
+[Params]
+  subtitle = "Building cool stuff with cool people."
+  logo = "img/452.jpg"
+  favicon = "img/favicon.ico"
+  dateFormat = "January 2, 2006"
+  comments = true
+  commit = "https://github.com/esburch/emilyburch/tree/"
+#  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
+
+#[[Params.bigimg]]
+#  src = "img/triangle.jpg"
+#  desc = "Triangle"
+#[[Params.bigimg]]
+#  src = "img/sphere.jpg"
+#  desc = "Sphere"
+#[[Params.bigimg]]
+#  src = "img/hexagon.jpg"
+#  desc = "Hexagon"
+
+[Author]
+  name = "Emily Burch"
+  email = "burch.emilys@gmail.com"
+  github = "esburch"
+  linkedin = "esburch"
+
 
 [[menu.main]]
-    url = "/"
-    name = "Home"
+    name = "Blog"
+    url = ""
     weight = 1
 
 [[menu.main]]
-    url = "/post/"
-    name = "Posts"
-    weight = 2
-
-[[menu.main]]
-    url = "/project/"
-    name = "Projects"
+    name = "About"
+    url = "page/about/"
     weight = 3
 
-# Social icons to be shown on the right-hand side of the navigation bar
-# The "name" field should match the name of the icon to be used
-# The list of available icons can be found at http://fontawesome.io/icons/
-
-[[menu.icon]]
-    url = "contact@emilyburch.com"
-    name = "envelope-o"
-    weight = 1
-
-[[menu.icon]]
-    url = "https://github.com/esburch/"
-    name = "github"
+[[menu.main]]
+    identifier = "samples"
+    name = "Samples"
     weight = 2
 
-[[menu.icon]]
-    url = "https://www.linkedin.com/in/esburch/"
-    name = "linkedin"
-    weight = 4
+[[menu.main]]
+    parent = "samples"
+    name = "Code Sample"
+    url = "post/2016-03-08-code-sample"
+    weight = 3
+
+[[menu.main]]
+    name = "Tags"
+    url = "tags"
+    weight = 3
