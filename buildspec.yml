@@ -3,12 +3,10 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Install pip
+      - echo Install Hugo
       - apt-get update -y
-      - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
-      - PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-      - echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >>~/.bash_profile
-      - brew install hugo
+      - wget https://github.com/gohugoio/hugo/releases/download/v0.25.1/hugo_0.25.1_Linux-64bit.deb
+      - dpkg -i hugo_0.25.1_Linux-64bit.deb
   build:
     commands:
       - echo Build started on `date`
