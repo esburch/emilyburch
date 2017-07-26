@@ -1,9 +1,0 @@
-[submodule "minimal"]
-	path = minimal
-	url = https://github.com/calintat/minimal.git
-[submodule "themes\\sustain"]
-	path = themes\\sustain
-	url = https://github.com/nurlansu/hugo-sustain.git
-[submodule "themes/beautifulhugo"]
-	path = themes/beautifulhugo
-	url = https://github.com/halogenica/beautifulhugo.git
