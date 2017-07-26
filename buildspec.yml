@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Install pip
+      - apt-get update -y
+      - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+      - PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+      - echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >>~/.bash_profile
+      - brew install hugo
+  build:
+    commands:
+      - echo Build started on `date`
+      - hugo -v
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - public/*
