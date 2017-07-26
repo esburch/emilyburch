@@ -1,7 +1,7 @@
 ---
 title: "Hello"
 date: 2017-07-25
-draft: true
+draft: false
 type: post
 ---
 
