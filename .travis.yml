@@ -2,10 +2,8 @@ language: go
 install: go get -v github.com/gohugoio/hugo
 script:
 - hugo -v
-- python -v
-- pip install awscli
-- aws s3 sync --acl "public-read" --sse "AES256" public/ s3://emilyburch.com --exclude 'post'
-- aws s3 sync --acl "public-read" --sse "AES256" public/ s3://www.emilyburch.com --exclude 'post'
+- python --version
+- aws s3 sync --acl "public-read" --sse "AES256" public/ s3://emilyburch.com
 
 env:
   global:
