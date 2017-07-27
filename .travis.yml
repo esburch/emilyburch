@@ -5,6 +5,9 @@ script:
 - python --version
 - sudo pip install s3cmd
 - s3cmd sync --delete-removed -P -M -r public/ s3://emilyburch.com/
+branches:
+  only:
+    - master
 env:
   global:
   - secure: S6Gq1RAJsrsvs8/+rSMTWXOVxMKPN7pouLNO6L08GjvzDhQEMf5PbJNwsxucK+/2QBuIo7RJCKeSxBEu0CsIL/njqmSFT4ILyj3b3tdv1wvYF+lwcssq8V9dSXJjvKaU4+A6O3Ft/7AHYlwJdrJeQzNNG/Ahm57OZwXH0mdtcQeYETD8fsPYmPgfj1GLAV25gU95KYjl36uIO6MwzgWSA2t2dVmSSoi8t/iw/Yi8z1l6vFQfDGJh5C7XRyumF9ni04/Wdako+z0QSYOLz3x9BEz3UbYC5IcOCSWTh+JZI2mfN3JCCHgbRVBttdc831gy8qW1/0BEUvsBX4iS+q3AXe+tiAJ65IAx3gx5oZNIcdsuxqCwRSptXimJlxbk65YAkmDfEa04dRQtjAdqi9mJ4l9JmHVkzCJNnrL6dj98C+7rVhEk9BzcHPpUgTieQtg7XjWrSIU+7M5Dc+bm8skfQk0q0Q2HyFHL+MZFHKyQetoNUfp1Z7QAg0vOXeaRgxJhrrDqZ0dj2vZbHidvgWbMlnA+FwSwX+RKPme9m48UVrwH2M7JevXY3D4sKv4ydVAvCX/SIs2VMv8QBiqSz1x6ZO59d1my4AbGbqzs7jp7TVN4BpV1Vzbn47IKMjR+1j/D02J9V08z1Km6NGuiKQHZ+VBZZRc9ojX8+RTWdr5oCeM=
