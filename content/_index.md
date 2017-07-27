@@ -1,7 +1,7 @@
 ---
 title: "Emily Burch | DevOps Engineer"
 date: 2017-07-25
-draft: true
+draft: false
 ---
 
 > Woo hoo.
