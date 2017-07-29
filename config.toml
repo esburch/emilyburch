@@ -12,7 +12,7 @@ pygmentCodeFences = true
 [Params]
   subtitle = "Building cool stuff with cool people."
   logo = "img/452.jpg"
-  favicon = "img/favicon.ico"
+  favicon = "img/gear.ico"
   dateFormat = "January 2, 2006"
   comments = true
   commit = "https://github.com/esburch/emilyburch/tree/"

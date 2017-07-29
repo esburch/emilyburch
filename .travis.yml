@@ -1,11 +1,15 @@
 language: go
-install: go get -v github.com/gohugoio/hugo
+install:
+  - go get -v github.com/gohugoio/hugo
+  - hugo -v
+  - python --version
+  - pip install awscli
 script:
-- hugo -v
-- python --version
-- pip install awscli
 - aws s3 sync --acl "public-read" --sse "AES256" public/ s3://emilyburch.com
+on:
+  branch: master
 
-branches:
-  only:
-    - master
+script:
+- aws s3 sync --acl "public-read" --sse "AES256" public/ s3://test.emilyburch.com
+on:
+  branch: develop
