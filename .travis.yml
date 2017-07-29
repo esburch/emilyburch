@@ -12,14 +12,12 @@ deploy:
   - local_dir: public
   - on:
       branch: master
-deploy:
   - provider: s3
   - bucket: test.emilyburch.com
   - acl: public_read
   - local_dir: public
   - on:
       branch: develop
-deploy:
   - provider: s3
   - bucket: test.emilyburch.com
   - acl: public_read
