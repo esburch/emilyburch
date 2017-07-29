@@ -4,6 +4,6 @@ install:
 script:
   - python --version
   - pip install awscli
-  - GIT_COMMIT_SHA=`git rev-parse --verify HEAD` GIT_COMMIT_SHA_SHORT=`git rev-parse --short HEAD` ./hugo -v
+  - GIT_COMMIT_SHA=`git rev-parse --verify HEAD` GIT_COMMIT_SHA_SHORT=`git rev-parse --short HEAD` hugo -v
   - chmod +x ./scripts/aws_upload.sh
   - ./scripts/aws_upload.sh
