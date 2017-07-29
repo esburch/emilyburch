@@ -1,7 +1,7 @@
 ---
-title: "Travisci"
-date: 2017-07-26
+title: "TravisCI"
+date: 2017-07-29
 draft: false
 ---
 
-## Now deploying with Travis CI!
+### Now deploying with Travis CI!
