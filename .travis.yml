@@ -2,10 +2,8 @@ install:
   - wget --quiet https://github.com/gohugoio/hugo/releases/download/v0.25.1/hugo_0.25.1_Linux-64bit.deb
   - sudo dpkg -i hugo_0.25.1_Linux-64bit.deb
 script:
-  - GIT_COMMIT_SHA=`git rev-parse --verify HEAD`
-  - GIT_COMMIT_SHA_SHORT=`git rev-parse --short HEAD`
   - python --version
   - pip install awscli
-  - hugo -v
+  - GIT_COMMIT_SHA=`git rev-parse --verify HEAD` GIT_COMMIT_SHA_SHORT=`git rev-parse --short HEAD` ./hugo -v
   - chmod +x ./scripts/aws_upload.sh
   - ./scripts/aws_upload.sh
