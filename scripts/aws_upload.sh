@@ -2,10 +2,13 @@
 set -ev
 if [ "${TRAVIS_PULL_REQUEST}" = "true" ]; then
   S3_BUCKET="pr.emilyburch.com"
+  echo "Pull Request Build: Deploy to $S3_BUCKET"
 elif [ "${TRAVIS_BRANCH}" = "develop" ]; then
   S3_BUCKET="test.emilyburch.com"
+  echo "${TRAVIS_BRANCH} Build: Deploy to $S3_BUCKET"
 elif [ "${TRAVIS_BRANCH}" = "master" ]; then
   S3_BUCKET="emilyburch.com"
+  echo "${TRAVIS_BRANCH} Build: Deploy to $S3_BUCKET"
   INVALIDATE="true"
 fi
 

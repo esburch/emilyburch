@@ -7,4 +7,5 @@ script:
   - python --version
   - pip install awscli
   - hugo -v
+  - chmod +x ./scripts/aws_upload.sh
   - ./scripts/aws_upload.sh
