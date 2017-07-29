@@ -1,6 +1,7 @@
 language: go
 install:
   - go get -v github.com/gohugoio/hugo
+script:
   - GIT_COMMIT_SHA=`git rev-parse --verify HEAD`
   - GIT_COMMIT_SHA_SHORT=`git rev-parse --short HEAD`
   - hugo -v
@@ -18,3 +19,11 @@ deploy:
   - local_dir: public
   - on:
       branch: develop
+deploy:
+  - provider: s3
+  - bucket: test.emilyburch.com
+  - acl: public_read
+  - local_dir: public
+  - on:
+      branch: develop
+      condition: $TRAVIS_PULL_REQUEST = "true"
