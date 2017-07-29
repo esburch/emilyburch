@@ -1,11 +1,10 @@
-language: go
-install: go get -v github.com/gohugoio/hugo
+install:
+  - wget --quiet https://github.com/gohugoio/hugo/releases/download/v0.25.1/hugo_0.25.1_Linux-64bit.deb
+  - sudo dpkg -i hugo_0.25.1_Linux-64bit.deb
 script:
-- hugo -v
-- python --version
-- pip install awscli
-- aws s3 sync --acl "public-read" --sse "AES256" public/ s3://emilyburch.com
-
-branches:
-  only:
-    - master
+  - python --version
+  - pip install awscli
+  - GIT_COMMIT_SHA=`git rev-parse --verify HEAD` GIT_COMMIT_SHA_SHORT=`git rev-parse --short HEAD` hugo -v
+  - aws configure set preview.cloudfront true
+  - chmod +x ./scripts/aws_upload.sh
+  - ./scripts/aws_upload.sh
