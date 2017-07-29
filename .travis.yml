@@ -7,21 +7,21 @@ script:
   - hugo -v
 deploy:
   - provider: s3
-  - bucket: emilyburch.com
-  - acl: public_read
-  - local_dir: public
-  - on:
+    bucket: emilyburch.com
+    acl: public_read
+    local_dir: public
+    on:
       branch: master
   - provider: s3
-  - bucket: test.emilyburch.com
-  - acl: public_read
-  - local_dir: public
-  - on:
+    bucket: test.emilyburch.com
+    acl: public_read
+    local_dir: public
+    on:
       branch: develop
   - provider: s3
-  - bucket: test.emilyburch.com
-  - acl: public_read
-  - local_dir: public
-  - on:
+    bucket: test.emilyburch.com
+    acl: public_read
+    local_dir: public
+    on:
       branch: develop
       condition: $TRAVIS_PULL_REQUEST = "true"
