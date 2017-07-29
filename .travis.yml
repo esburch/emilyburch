@@ -16,5 +16,5 @@ script:
       branch: develop
 script:
   - 'if [ "$TRAVIS_PULL_REQUEST" == "true" ]; then aws s3 sync --acl "public-read" --sse "AES256" public/ s3://pr.emilyburch.com; fi'
-  on:
-    all_branches: true
+    on:
+      all_branches: true
