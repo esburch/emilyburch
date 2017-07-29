@@ -6,17 +6,15 @@ install:
   - hugo -v
   - python --version
   - pip install awscli
-deploy:
-  script:
+script:
   - aws s3 sync --acl "public-read" --sse "AES256" public/ s3://emilyburch.com
-  on:
-    branch: master
-
-  script:
+    on:
+      branch: master
+script:
   - aws s3 sync --acl "public-read" --sse "AES256" public/ s3://test.emilyburch.com
-  on:
-    branch: develop
-  script:
-    - 'if [ "$TRAVIS_PULL_REQUEST" == "true" ]; then aws s3 sync --acl "public-read" --sse "AES256" public/ s3://pr.emilyburch.com; fi'
+    on:
+      branch: develop
+script:
+  - 'if [ "$TRAVIS_PULL_REQUEST" == "true" ]; then aws s3 sync --acl "public-read" --sse "AES256" public/ s3://pr.emilyburch.com; fi'
   on:
     all_branches: true
