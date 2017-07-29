@@ -1,6 +1,7 @@
-language: go
 install:
-  - go get -v github.com/gohugoio/hugo
+  - curl --silent -L https://github.com/gohugoio/hugo/releases/download/v0.25.1/hugo_0.25.1_Linux-64bit.deb
+  - dpkg -i hugo_0.25.1_Linux-64bit.deb
+
 script:
   - GIT_COMMIT_SHA=`git rev-parse --verify HEAD`
   - GIT_COMMIT_SHA_SHORT=`git rev-parse --short HEAD`
